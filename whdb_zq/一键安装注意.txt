@@ -1,0 +1,5 @@
+一次性删除master数据库中的所有用户添加的表 
+use master;
+go
+sp_msforeachtable @command1="drop table ?"
+go

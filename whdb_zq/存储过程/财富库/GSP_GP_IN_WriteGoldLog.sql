@@ -1,3 +1,4 @@
+USE ZQTreasureDB;
 set ANSI_NULLS ON
 set QUOTED_IDENTIFIER ON
 go
@@ -30,8 +31,8 @@ BEGIN
 	--DECLARE @CSql					NVARCHAR(1000)						--SQL
 	DECLARE @ILastGold				INT									--×îºó½ð±Ò
 
-	SET @CTableName='QPWebDB.dbo.UserGoldLog_'+@CTableNameDate
-	SELECT @ILastGold=Score FROM QPTreasureDB.dbo.GameScoreInfo WHERE UserID=@IUserID
+	SET @CTableName='ZQWebDB.dbo.UserGoldLog_'+@CTableNameDate
+	SELECT @ILastGold=Score FROM ZQTreasureDB.dbo.GameScoreInfo WHERE UserID=@IUserID
 
 	EXEC ('INSERT INTO '+@CTableName+'(UserID,ChangeType,LastGold,ChangeGold,IpAddress) VALUES
 		('+@IUserID+','+@TChangeType+','+@ILastGold+','+@IChangeGold+','''+@CIpAddress+''')')

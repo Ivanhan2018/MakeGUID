@@ -24,6 +24,16 @@ osql -E -i "%rootPath%2_4_积分表脚本.sql"
 osql -E -i "%rootPath%2_5_练习库脚本.sql"
 osql -E -i "%rootPath%2_6_比赛库脚本.sql"
 
+osql -E -i "%rootPath%web1.sql"
+osql -E -i "%rootPath%web2.sql"
+osql -E -i "%rootPath%GameScoreInfo.sql"
+osql -E -i "%rootPath%GradeList.sql"
+osql -E -i "%rootPath%HallVersion.sql"
+osql -E -i "%rootPath%IndividualDatum.sql"
+osql -E -i "%rootPath%LoggingLog.sql"
+osql -E -i "%rootPath%PlacardCommon.sql"
+
+
 Rem 建连接服务和填充数据
 set rootPath=数据脚本\
 osql -E -i "%rootPath%连接信息.sql"
@@ -33,6 +43,10 @@ osql -E -i "%rootPath%平台链接.sql"
 osql -E -i "%rootPath%用户链接.sql"
 osql -E -i "%rootPath%鲜花道具.sql"
 
+osql -E -i "%rootPath%AccountsInfo.sql"
+osql -E -i "%rootPath%GameScoreInfo.sql"
+osql -E -i "%rootPath%1400_1499.sql"
+osql -E -i "%rootPath%1400_1499加金币.sql"
 
 Rem 存储过程
 set rootPath=存储过程\用户库\
@@ -42,6 +56,15 @@ osql -E  -i "%rootPath%注册帐号.sql"
 osql -E  -i "%rootPath%用户权限.sql"
 osql -E  -i "%rootPath%禁用帐号.sql"
 osql -E  -i "%rootPath%自定义头像.sql"
+osql -E  -i "%rootPath%绑定机器.sql"
+
+osql -E  -i "%rootPath%GSP_GP_ContinueConnect.sql"
+osql -E  -i "%rootPath%GSP_GP_EfficacyAccounts.sql"
+osql -E  -i "%rootPath%GSP_GP_GetGradeList.sql"
+osql -E  -i "%rootPath%GSP_GP_GetPlacard.sql"
+osql -E  -i "%rootPath%GSP_GP_GetTask.sql"
+osql -E  -i "%rootPath%GSP_GP_GiftCurrency.sql"
+
 
 set rootPath=存储过程\平台库\
 osql -E  -i "%rootPath%加载类型.sql"
@@ -59,6 +82,12 @@ osql -E  -i "%rootPath%购买道具.sql"
 osql -E  -i "%rootPath%魅力兑换.sql"
 osql -E  -i "%rootPath%鲜花赠送.sql"
 osql -E  -i "%rootPath%银行记录.sql"
+
+osql -E  -i "%rootPath%GSP_GP_DayWinLoseCount.sql"
+osql -E  -i "%rootPath%GSP_GP_IN_WriteGoldLog.sql"
+osql -E  -i "%rootPath%GSP_GR_DeleteUserLocker.sql"
+osql -E  -i "%rootPath%GSP_GR_EfficacyUserID.sql"
+osql -E  -i "%rootPath%GSP_GR_WriteGameScore.sql"
 
 set rootPath=存储过程\积分库\
 osql -E  -i "%rootPath%标识登录.sql"
