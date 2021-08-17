@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tool2021", "tool2021.csproj", "{52B33503-BAE8-41CC-A424-C75EC0D1D38E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{52B33503-BAE8-41CC-A424-C75EC0D1D38E}.Debug.ActiveCfg = Debug|.NET
+		{52B33503-BAE8-41CC-A424-C75EC0D1D38E}.Debug.Build.0 = Debug|.NET
+		{52B33503-BAE8-41CC-A424-C75EC0D1D38E}.Release.ActiveCfg = Release|.NET
+		{52B33503-BAE8-41CC-A424-C75EC0D1D38E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
