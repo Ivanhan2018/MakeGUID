@@ -26,6 +26,7 @@ namespace tool2021
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button5;
 		/// <summary>
 		/// 必需的设计器变量。
 		/// </summary>
@@ -288,6 +289,26 @@ namespace tool2021
 			return ByteArrayToHexString (buf, 0);
 		}
 
+		public static string Md5 (string str, string strValue)
+		{
+			string str2 = string.Empty;
+			//if (!string.IsNullOrWhiteSpace (strValue))
+			if (strValue != null && strValue!=string.Empty)
+			{
+				str2 = Md5 (str) + strValue;
+			}
+			else
+			{
+				str2 = Md5 (str);
+			}
+			return Md5 (str2);
+		}
+
+		public static string Md5 (string str)
+		{
+			return HashPasswordForStoringInConfigFile (str, "md5").ToUpper ();
+		}
+
 		//
 		// Static Methods
 		//
@@ -394,6 +415,7 @@ namespace tool2021
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
+			this.button5 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -474,10 +496,19 @@ namespace tool2021
 			this.button4.Text = "解密";
 			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
+			// button5
+			// 
+			this.button5.Location = new System.Drawing.Point(512, 152);
+			this.button5.Name = "button5";
+			this.button5.TabIndex = 10;
+			this.button5.Text = "管理员密码";
+			this.button5.Click += new System.EventHandler(this.button5_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
 			this.ClientSize = new System.Drawing.Size(632, 202);
+			this.Controls.Add(this.button5);
 			this.Controls.Add(this.button4);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
@@ -534,6 +565,11 @@ namespace tool2021
 			string strKey = this.textBox3.Text;//"nJxPx8^#b*2Wnn^wUzQOxP0Q%C5MI*uE"
 			string str1 = Decrypt(strSrc,strKey);
 			this.textBox2.Text = str1;			
+		}
+
+		private void button5_Click(object sender, System.EventArgs e)
+		{
+	        this.textBox2.Text = Md5 (this.textBox1.Text, "@!#DD");	
 		}
 	}
 }
