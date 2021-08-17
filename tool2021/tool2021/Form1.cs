@@ -22,14 +22,16 @@ namespace tool2021
         private void button1_Click(object sender, EventArgs e)
         {
             string strSrc = this.textBox1.Text;
-            string str1 = DES.Encrypt(strSrc, "nJxPx8^#b*2Wnn^wUzQOxP0Q%C5MI*uE");
+            string strKey = this.textBox3.Text;//"nJxPx8^#b*2Wnn^wUzQOxP0Q%C5MI*uE"
+            string str1 = DES.Encrypt(strSrc, strKey);
             this.textBox2.Text=str1;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string strSrc = this.textBox1.Text;
-            string str1 = DES.Decrypt(strSrc, "nJxPx8^#b*2Wnn^wUzQOxP0Q%C5MI*uE");
+            string strKey = this.textBox3.Text;//"nJxPx8^#b*2Wnn^wUzQOxP0Q%C5MI*uE"
+            string str1 = DES.Decrypt(strSrc, strKey);
             this.textBox2.Text = str1;
         }
     }
